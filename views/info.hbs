@@ -1,0 +1,79 @@
+<h1 class='text-2xl font-bold p-10'>Información</h1>
+
+<div class='bg-gray-50 min-h-screen flex items-center justify-center px-16'>
+	<div class='relative w-full max-w-xl'>
+		<div class='m-8 relative space-y-4'>
+			<div class='p-5 bg-white rounded-lg flex items-center justify-between space-x-8 shadow-lg'>
+				<div class='flex-1 flex flex-row justify-between items-center'>
+					<p class='p-2 bg-gray-300 rounded'>Argumentos de entrada</p>
+					<div class='flex flex-col'>
+						{{#each args}}
+							<div class='p-2 mb-2 rounded-lg text-white' style='background: linear-gradient(to right,#ee7724,#d8363a,#dd3675,#b44593)'>
+								<span>{{@key}}:
+									{{this}}
+								</span>
+							</div>
+						{{/each}}
+					</div>
+				</div>
+			</div>
+
+			<div class='p-5 bg-white rounded-lg flex items-center justify-between space-x-8 shadow-lg'>
+				<div class='flex-1 flex justify-between items-center'>
+					<p class='p-2 bg-gray-300 rounded'>Nombre de la plataforma</p>
+					<div class='p-2 rounded-lg bg-purple-300 text-white' style='background: linear-gradient(to right,#ee7724,#d8363a,#dd3675,#b44593)'>
+						{{os}}
+					</div>
+				</div>
+			</div>
+			<div class='p-5 bg-white rounded-lg flex items-center justify-between space-x-8 shadow-lg'>
+				<div class='flex-1 flex justify-between items-center'>
+					<p class='p-2 bg-gray-300 rounded'>Versión de Node.js</p>
+					<div class='p-2 rounded-lg bg-purple-300 text-white' style='background: linear-gradient(to right,#ee7724,#d8363a,#dd3675,#b44593)'>
+						{{version}}
+					</div>
+				</div>
+			</div>
+			<div class='p-5 bg-white rounded-lg flex items-center justify-between space-x-8 shadow-lg'>
+				<div class='flex-1 flex justify-between items-center'>
+					<p class='p-2 bg-gray-300 rounded'>Memoria total reservada (rss)</p>
+					<div class='p-2 rounded-lg bg-purple-300 text-white' style='background: linear-gradient(to right,#ee7724,#d8363a,#dd3675,#b44593)'>
+						{{memory}}
+					</div>
+				</div>
+			</div>
+			<div class='p-5 bg-white rounded-lg flex items-center justify-between space-x-8 shadow-lg'>
+				<div class='flex-1 flex justify-between items-center'>
+					<p class='p-2 bg-gray-300 rounded'>Path de ejecución</p>
+					<div class='p-2 rounded-lg bg-purple-300 text-white' style='background: linear-gradient(to right,#ee7724,#d8363a,#dd3675,#b44593)'>
+						{{path}}
+					</div>
+				</div>
+			</div>
+			<div class='p-5 bg-white rounded-lg flex items-center justify-between space-x-8 shadow-lg'>
+				<div class='flex-1 flex justify-between items-center'>
+					<p class='p-2 bg-gray-300 rounded'>Process id</p>
+					<div class='p-2 rounded-lg bg-purple-300 text-white' style='background: linear-gradient(to right,#ee7724,#d8363a,#dd3675,#b44593)'>
+						{{id}}
+					</div>
+				</div>
+			</div>
+			<div class='p-5 bg-white rounded-lg flex items-center justify-between space-x-8 shadow-lg' style='width: 50rem; position: relative; left: -9rem'>
+				<div class='flex-1 flex justify-between items-center'>
+					<p class='p-2 bg-gray-300 rounded'>Carpeta del proyecto</p>
+					<div class='p-2 rounded-lg bg-purple-300 text-white' style='background: linear-gradient(to right,#ee7724,#d8363a,#dd3675,#b44593)'>
+						{{folder}}
+					</div>
+				</div>
+			</div>
+			<div class='p-5 bg-white rounded-lg flex items-center justify-between space-x-8 shadow-lg'>
+				<div class='flex-1 flex justify-between items-center'>
+					<p class='p-2 bg-gray-300 rounded'>Procesadores en el servidor</p>
+					<div class='p-2 rounded-lg bg-purple-300 text-white' style='background: linear-gradient(to right,#ee7724,#d8363a,#dd3675,#b44593)'>
+						{{cpus}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

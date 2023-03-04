@@ -1,0 +1,36 @@
+{
+  "name": "desafio17",
+  "version": "1.0.0",
+  "description": "1. Ejecutar el archivo tablaProductos.js para crear la tabla de productos en MySQL e insertar los productos\r 2. Iniciar con XAMPP el servidor de la base de datos MySQL, este se ejecutará en el puerto 3306",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js --port 8080",
+    "dev": "nodemon server.js --port 8080"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "compression": "^1.7.4",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.7",
+    "express-session": "^1.17.3",
+    "knex": "^0.21.17",
+    "minimist": "^1.2.8",
+    "mongoose": "^6.9.0",
+    "mongoose-findorcreate": "^3.0.0",
+    "mysql": "^2.18.1",
+    "normalizr": "^3.6.2",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.5.3",
+    "sqlite3": "^5.1.4",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.5.0",
+    "nodemon": "^2.0.20"
+  }
+}
