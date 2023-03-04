@@ -1,7 +1,0 @@
-Mongo Atlas Desafio13
-
-usuario: juanpablocabrera
-password: OoXG4Lns64acZsFs
-
-node.js: mongodb+srv://juanpablocabrera:OoXG4Lns64acZsFs@cluster0.sail1ko.mongodb.net/?retryWrites=true&w=majority
-MongoDB Compass: mongodb+srv://juanpablocabrera:OoXG4Lns64acZsFs@cluster0.sail1ko.mongodb.net/test
