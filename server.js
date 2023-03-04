@@ -8,7 +8,9 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const MongoStore = require('connect-mongo');
 const mongoose = require('mongoose');
-require('dotenv').config();
+if (process.env.MODE != 'production') {
+	require('dotenv').config();
+}
 const MongoDBconnection = process.env.MONGODBCONNECTION;
 const { loggerWarn } = require('./winston');
 const Contenedor = require('./classContenedor');
