@@ -1,20 +1,26 @@
-const { options } = require('./options/mysql');
-const knex = require('knex')(options);
+const { Schema, model } = require('mongoose');
 const { loggerError } = require('./winston');
 
+const productosSchema = new Schema({
+	id: { type: Number, required: true },
+	name: { type: String, required: true },
+	price: { type: Number, required: true },
+	thumbnail: { type: String, required: true },
+});
+
+const productosMongoDB = model('Productos', productosSchema);
+
 class Contenedor {
-	constructor(table) {
-		this.table = table;
+	constructor() {
+		this.productosMongoDB = productosMongoDB;
 	}
 
 	// Devuelve un array con todos los objetos presentes en el archivo
 
 	getAll = async () => {
 		try {
-			const productos = await knex.from('productos').select('*');
-			if (productos.length > 0) {
-				return productos;
-			}
+			const res = await this.productosMongoDB.find({});
+			return res;
 		} catch (err) {
 			loggerError.error(err);
 		}
@@ -24,8 +30,11 @@ class Contenedor {
 
 	save = async (Object) => {
 		try {
-			await knex.from('productos').insert(Object);
-			console.log('producto insertado', Object);
+			console.log(Object);
+			const insertObject = new this.productosMongoDB({ ...Object });
+			const savedObject = await insertObject.save();
+			console.log(savedObject);
+			return savedObject;
 		} catch (err) {
 			loggerError.error(err);
 		}
@@ -35,7 +44,7 @@ class Contenedor {
 
 	getById = async (Number) => {
 		try {
-			const productos = await knex.from('productos').select('*').where('id', '=', Number);
+			const productos = await this.productosMongoDB.find({ id: Number });
 			if (productos.length > 0) {
 				console.log(productos);
 				return productos;
@@ -49,14 +58,10 @@ class Contenedor {
 
 	deleteById = async (Number) => {
 		try {
-			await knex
-				.from('productos')
-				.select('*')
-				.where('id', '=', Number)
-				.del()
-				.then(() => {
-					console.log('producto ' + Number + ' borrado correctamente');
-				});
+			const producto = db.movies.deleteOne({ number: Number });
+			if (producto) {
+				console.log('producto eliminado');
+			}
 		} catch (err) {
 			loggerError.error(err);
 		}
@@ -64,7 +69,7 @@ class Contenedor {
 
 	// Elimina todos los objetos presentes en la tabla
 
-	deleteAll = async () => {
+	/* deleteAll = async () => {
 		try {
 			await knex
 				.from('productos')
@@ -76,11 +81,11 @@ class Contenedor {
 		} catch (err) {
 			loggerError.error(err);
 		}
-	};
+	}; */
 
 	// Reemplaza el producto cuyo id coincide con el ingresado
 
-	replace = async (Number, body) => {
+	/* replace = async (Number, body) => {
 		try {
 			await knex
 				.from('productos')
@@ -92,7 +97,7 @@ class Contenedor {
 		} catch (err) {
 			loggerError.error(err);
 		}
-	};
+	}; */
 }
 
 const contenedor = new Contenedor();

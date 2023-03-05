@@ -56,12 +56,12 @@ socket.on('product-list', (data) => {
 
 	document.getElementById('div-list-productos').innerHTML = productos;
 
-	let User = '';
+	/* let User = '';
 	User += `
 			${username.toLocaleUpperCase()}
 		`;
 	console.log(User);
-	document.getElementById('user').innerHTML = User;
+	document.getElementById('user').innerHTML = User; */
 });
 
 function enviarProducto() {
