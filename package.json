@@ -4,8 +4,8 @@
   "description": "1. Ejecutar el archivo tablaProductos.js para crear la tabla de productos en MySQL e insertar los productos\r 2. Iniciar con XAMPP el servidor de la base de datos MySQL, este se ejecutará en el puerto 3306",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js --port 8080",
-    "dev": "nodemon server.js --port 8080"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",

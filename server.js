@@ -18,13 +18,13 @@ const contenedor = new Contenedor();
 const Chat = require('./chatContenedor');
 const chat = new Chat();
 const { fork } = require('child_process');
-const parseArgs = require('minimist');
-const options = { default: { port: 8080 } };
-const args = parseArgs(process.argv.slice(2), options);
+/* const parseArgs = require('minimist');
+const options = { default: { port: 8080 } }; */
+/* const args = parseArgs(process.argv.slice(2), options);
 if (args._[0]) {
 	args.port = args._[0];
-}
-const PORT = args.port;
+} */
+const PORT = process.env.PORT;
 
 const Usuarios = require('./usersModel');
 const bcrypt = require('bcrypt');
