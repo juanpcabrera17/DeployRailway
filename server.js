@@ -243,7 +243,7 @@ app.get('/productos-test', checkAuthentication, async (req, res) => {
 
 app.get('/info', (req, res) => {
 	const data = {
-		args: args,
+		/* args: args, */
 		os: process.platform,
 		version: process.version,
 		memory: process.memoryUsage().rss,
